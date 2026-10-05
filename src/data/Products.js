@@ -2,23 +2,23 @@ const products = [
   {
     id: 1,
     name: "Headphone 1",
-    price: 120,
-    img: "VIP (4).jpg",
+    price: 125,
+    img: "/VIP (4).jpg",
     category: "earpoad",
   },
   {
     id: 2,
     name: "Headphone 2",
     price: 150,
-    img: "VIP (4).jpg",
+    img: "/VIP (4).jpg",
     category: "earpoad",
   },
   {
     id: 3,
-    
+
     name: "Camera 1",
     price: 450,
-    img: "VIP (4).jpg",
+    img: "/VIP (4).jpg",
     category: "earpoad",
   },
   {
@@ -121,4 +121,4 @@ const products = [
   },
 ];
 
-export default pro
+export default products;

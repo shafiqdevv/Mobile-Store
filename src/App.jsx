@@ -10,10 +10,9 @@ import Hero from "./Component/Hero";
 import FixedButton from "./Component/FixedButton";
 import LoginForm from "./pages/LoginForm";
 import Page404 from "./pages/Page404";
-import ShopingCart from "./pages/ShopingCart";
-// import Products from "./pages/Products";
 import EditProduct from "./pages/EditProduct";
-import ProductsList from "./Component/Products";
+import ProductsList from "./Component/ProductsList";
+import BuyProduct from "./pages/BuyProduct";
 const darkMode = "bg-gray-900 text-gray-100 transition duration-700";
 const lightMode = "bg-gray-100 text-gray-900 transition duration-700";
 function App() {
@@ -35,11 +34,9 @@ function App() {
             </>
           }
         />
-        {/* <Route path="/products" element={<Products />} /> */}
         <Route path="/edit-product/:id" element={<EditProduct />}/>
-        <Route path="/buy/:id" element={<div>Buy Page</div>}/>
+        <Route path="/buy/:id" element={<BuyProduct />}/>
         <Route path="/loginForm" element={<LoginForm  />}/>
-        <Route path="/shopingCart" element={<ShopingCart/>}/>
         <Route path="*" element={<Page404/>}/>
       </Routes>
     </div>
