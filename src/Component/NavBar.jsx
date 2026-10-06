@@ -2,7 +2,9 @@ import {LucideShoppingCart,Moon,Sun,} from "lucide-react";
 import SearchComponent from "./SearchComponent";
 import { NavLink } from "react-router-dom";
 import DropDowns from "./DropDowns";
-function NavBar({ night, handleNight }) {
+import { FaCartShopping } from "react-icons/fa6";
+import { FaMoon } from "react-icons/fa";
+function NavBar({ night, handleNight, countBuy,setSearch,search }) {
   return (
     <div id="hero" className="flex justify-between py-2 px-6">
       <div className="flex gap-5">
@@ -16,11 +18,16 @@ function NavBar({ night, handleNight }) {
         </div>
       </div>
       <div className=" flex gap-5 items-center">
-        <SearchComponent night={night}/>
-        <NavLink to={'/shopingCart'}><LucideShoppingCart strokeWidth={1.3} size={20} className="cursor-pointer"/></NavLink>
+        <SearchComponent night={night} search={search} setSearch={setSearch}/>
+        <NavLink to={'/cart'} className="relative p-3">
+          <FaCartShopping className="text-xl text-gray-600"/>
+          <div className="w-4 h-4 bg-red-500 text-white rounded-full absolute top-0 right-0 flex items-center justify-center text-xs">
+            {countBuy}
+          </div>
+        </NavLink>
         {night  
               ? <Sun size={20} onClick={handleNight} strokeWidth={1.3} className=" active:rotate-180 transition duration-500"/>
-              : <Moon size={20} onClick={handleNight} strokeWidth={1.3} className="active:rotate-180 transition duration-500"/>
+              : <FaMoon size={20}  onClick={handleNight} className="active:rotate-180 transition duration-500 text-gray-600"/>
         }
         <NavLink to={'/loginForm'} className="bg-[#f42c37] text-sm text-white rounded-2xl px-2 cursor-pointer">Login</NavLink>
       </div>

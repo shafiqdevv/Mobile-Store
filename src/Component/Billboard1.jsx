@@ -1,4 +1,13 @@
 function Billboard1(){
+    function handleBuy(product){
+    const cart = JSON.parse(localStorage.getItem('cart')) || []
+    const alreadyExists = cart.find(items => items.id === product.id);
+    if(!alreadyExists){
+      cart.push(product)
+    }
+    localStorage.setItem('cart',JSON.stringify(cart));
+    navigate('/cart');
+  };
     return(
         <div className="bg-[#f42c37] rounded-3xl mx-15 my-20 h-60 text-white relative flex justify-between">
             <div className="m-10">
@@ -10,7 +19,7 @@ function Billboard1(){
                 <p className="font-bold text-lg">Air Solo Bass</p>
                 <h2 className="text-4xl font-bold">Winter Sale</h2>
                 <p className="w-70 text-sm font-thind">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus amet</p>
-                <button className="cursor-pointer bg-white text-[#f42c37] rounded-full px-4 py-1 mt-3 text-sm">Shop</button>
+                <button onClick={() => handleBuy(product)} className="cursor-pointer bg-white text-[#f42c37] rounded-full px-4 py-1 mt-3 text-sm">Shop</button>
             </div>
             <img src="billboard (1).png" alt="" className="absolute w-50 top-[-15px] left-80"/>
         </div>
