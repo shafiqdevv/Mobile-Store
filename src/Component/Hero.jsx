@@ -3,7 +3,6 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { div } from "motion/react-client";
 import { motion } from "motion/react";
 const sliders = [
   {
@@ -106,20 +105,12 @@ function Hero({ night }) {
             className={`text-9xl font-bold ${night ? "text-gray-800" : "text-gray-100"} transition select-none`}>{slider.title2}</motion.h1>
             <div className="relative">
               <motion.img
-                initial={{
-                  opacity:0,
-                  scale: 0
-                }}
-                animate={{
-                  opacity: 1,
-                  scale:1
-                }}
-                transition={{
-                  duration: 1
-                }}
+                initial={{opacity:0, scale: 0}}
+                animate={{opacity: 1, scale:1}}
+                transition={{duration: 1}}
               src={`./${slider.image}`} className={slider.iamgeCSS}/>
             </div>
-            <button className="bg-[#f70505] text-sm rounded-2xl px-7 py-1 text-white">Shop By Category</button>
+            <a href="#category" className="bg-[#f70505] text-sm rounded-2xl px-7 py-1 text-white">Shop By Category</a>
           </section>
         </SwiperSlide>
         ))

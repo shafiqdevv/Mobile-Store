@@ -1,4 +1,5 @@
 import {FaCaretDown} from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 function DropDowns({night}){
     return(
         <div className="flex gap-6">
@@ -10,15 +11,15 @@ function DropDowns({night}){
               </span>
             </h1>
             <div className={`absolute bg-gray-100 ${night && 'bg-gray-900'} hidden z-[999] group-hover:block w-60 peer cursor-pointer py-1 rounded-xl shadow-xl`}>
-              <a href="#BestSellerProducts" className={`flex rounded-lg m-1 py-1 px-4 hover:bg-red-200 ${night && 'hover:bg-red-800'} my-3`}>
-                <h1 className='active:scale-102 transition duration-200'>Best Seller Products</h1>
+              <a href="#category" className={`flex rounded-lg m-1 py-1 px-4 hover:bg-red-200 ${night && 'hover:bg-red-800'} my-3`}>
+                <h1 className='active:scale-102 transition duration-200'>Category</h1>
               </a>
-              <a href="#NewlyAddedProducts" className={`flex rounded-lg m-1 py-1 px-4 hover:bg-red-200 ${night && 'hover:bg-red-800'} my-3`}>
-                <h1 className='active:scale-102 transition duration-200'>Newly Added Products</h1>
+              <a href="#productsList" className={`flex rounded-lg m-1 py-1 px-4 hover:bg-red-200 ${night && 'hover:bg-red-800'} my-3`}>
+                <h1 className='active:scale-102 transition duration-200'>Products</h1>
               </a>
-              <a href="#VIPProducts" className={`flex rounded-lg m-1 py-1 px-4 hover:bg-red-200 ${night && 'hover:bg-red-800'} my-3`}>
-                <h1 className='active:scale-102 transition duration-200'>VIP Products</h1>
-              </a>
+              <NavLink to={'/cart'} className={`flex rounded-lg m-1 py-1 px-4 hover:bg-red-200 ${night && 'hover:bg-red-800'} my-3`}>
+                <h1 className='active:scale-102 transition duration-200'>Shoping Cart</h1>
+              </NavLink>
               </div>
             </div>
         </div>

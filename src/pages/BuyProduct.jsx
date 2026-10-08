@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import products from "../data/Products";
-
+import { motion } from "motion/react";
 function BuyProduct() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -23,9 +23,16 @@ function BuyProduct() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-8">
+    <motion.div
+          
+    className="min-h-screen flex items-center justify-center p-8">
 
-      <div className="w-full max-w-md border rounded-xl p-6 shadow-lg">
+      <motion.div
+          initial={{opacity: 0, y: 50}}
+          animate={{opacity: 1, y: 0}}
+          whileInView={{opacity: 1, y: 0}}
+          transition={{duration: 0.7, ease: 'easeOut'}}
+      className="w-full max-w-md border rounded-xl p-6 shadow-lg">
 
         <img
           src={product.img}
@@ -48,9 +55,9 @@ function BuyProduct() {
           Confirm Buy
         </button>
 
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
   );
 }
 

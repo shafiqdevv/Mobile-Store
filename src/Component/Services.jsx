@@ -1,10 +1,13 @@
-import { CheckCircle2, Truck, Wallet } from "lucide-react";
 import { FaCarSide, FaCheckCircle, FaWallet } from "react-icons/fa";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
-
+import { motion } from "motion/react";
 function Services() {
   return (
-    <div className="flex gap-10 px-15 mx-20">
+    <motion.div
+          initial={{opacity: 0, y: 50}}
+          whileInView={{opacity: 1, y: 0}}
+          transition={{duration: 0.7, ease: 'easeOut'}}
+    className="flex gap-10 px-15 mx-20">
       <div className="flex justify-between gap-2 items-center">
         <FaCarSide size={37} strokeWidth={20} color="red"/>
         <div className="flex flex-col">
@@ -33,7 +36,7 @@ function Services() {
           <p className="text-xs text-gray-700">Secure Money Payment</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 export default Services;

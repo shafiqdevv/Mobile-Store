@@ -2,9 +2,13 @@ import { BsInstagram } from "react-icons/bs";
 import { CiMobile1 } from "react-icons/ci";
 import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { motion } from "motion/react";
 function Footer({night}) {
   return(
-    <div>
+    <motion.div
+          initial={{opacity: 0, y: 50}}
+          whileInView={{opacity: 1, y: 0}}
+          transition={{duration: 0.7, ease: 'easeOut'}}>
       <div className={`flex justify-between px-15 bg-gray-200 ${night && 'bg-gray-800'}`}>
         <img src="logo (1).svg" alt="logo" className="w-15"/>
         <img src="logo (2).svg" alt="logo" className="w-15"/>
@@ -22,17 +26,17 @@ function Footer({night}) {
         <div className="flex gap-10">
           <div className="flex flex-col gap-3">
             <h1 className="text-lg font-bold">Important Links</h1>
-            <NavLink to={'/'} className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Home</NavLink>
-            <NavLink to={'/'} className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>About</NavLink>
-            <NavLink to={'/'} className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Contact</NavLink>
+            <a href="#navBar" className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Home</a>
+            <a href="#category" className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Category</a>
+            <a href="#productsList" className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Products</a>
             <NavLink to={'/'} className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Blog</NavLink>
           </div>
           <div className="flex flex-col gap-4">
             <h1 className="text-lg font-bold">Links</h1>
-            <NavLink to={'/'} className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Home</NavLink>
-            <NavLink to={'/'} className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>About</NavLink>
+            <a href="#navBar" className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Home</a>
+            <a href="#category" className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Category</a>
+            <NavLink to={'/cart'} className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Shoping Cart</NavLink>
             <NavLink to={'/'} className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Contact</NavLink>
-            <NavLink to={'/'} className={'text-sm hover:text-gray-500 active:scale-105 duration-200'}>Blog</NavLink>
           </div>
         </div>
         <div className="flex flex-col gap-5 mt-10">
@@ -46,7 +50,7 @@ function Footer({night}) {
           <p className="flex items-center "><CiMobile1 size={30}/>+93 77 777 777 7</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 export default Footer;
