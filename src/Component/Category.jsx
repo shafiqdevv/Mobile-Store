@@ -6,7 +6,7 @@ const categorys = [
     id: 1,
     imageCSS: 'left-18 top-3 w-37',
     image: 'earpoadHome2.png',
-    navlink: 'earpoads'
+    navlink: 'earpoad'
   },
   {
     card: "py-10 pl-7 bg-gradient-to-br from-[#fdc62e] to-[#fdc62e]/90 text-white rounded-2xl relative h-[250px] flex items-end",

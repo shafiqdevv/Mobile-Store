@@ -14,6 +14,7 @@ import EditProduct from "./pages/EditProduct";
 import Cart from "./pages/Cart";
 import products from "./data/Products";
 import AddForm from "./pages/AddForm";
+import ProtectedRoute from "./Component/ProtectedRoute";
 import ProductsList from "./Component/ProductsList";
 const darkMode = "bg-gray-900 text-gray-100 transition duration-700";
 const lightMode = "bg-gray-100 text-gray-900 transition duration-700";
@@ -54,7 +55,11 @@ function App() {
           }
         />
         <Route path="/edit-product/:id" element={<EditProduct />}/>
-        <Route path="/cart" element={<Cart setCountBuy={setCountBuy}/>}/>
+        <Route path="/cart" element={
+          <ProtectedRoute>
+            <Cart setCountBuy={setCountBuy}/>
+          </ProtectedRoute>
+        }/>
         <Route path="/loginForm" element={<LoginForm  />}/>
         <Route path="/addForm" element={<AddForm/>}/>
         <Route path="*" element={<Page404/>}/>

@@ -6,9 +6,12 @@ import { motion } from "motion/react";
 const PhoneInput = RPI.default ? RPI.default : RPI;
 import 'react-phone-input-2/lib/style.css'
 import * as yup from 'yup';
+import { useNavigate } from "react-router-dom";
+import { BiLeftArrowAlt } from "react-icons/bi";
 
 function LoginForm(){
     const [phone, setPhone] = useState('');
+    const navigate = useNavigate();
     const schema = yup.object().shape({
         name: yup.string().min(3).required(),
         email: yup.string().email().required(),
@@ -22,7 +25,10 @@ function LoginForm(){
     }
     return(
         <div className="min-h-screen flex gap-5 flex-col items-center justify-center bg-gray-100">
-        <h1 className="font-poppins font-semibold text-4xl">Login</h1>
+        <div className="flex flex-col gap-1 items-center">
+            <BiLeftArrowAlt onClick={() => navigate(-1)} size={30} strokeWidth={1.2} className="cursor-pointer border rounded-full active:scale-97"/>
+            <h1 className="font-poppins font-semibold text-4xl">Login</h1>
+        </div>
         <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col items-center gap-3 mb-30">
             <motion.input
                 whileFocus={{scale:1.02}}

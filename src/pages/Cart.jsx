@@ -25,7 +25,7 @@ function Cart({setCountBuy}){
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                 {
                     cart.map(product => (
-                        <div key={product.id} className={`${product.kind === 'off' && 'bg-green-500'} p-5 relative shadow-lg`}>
+                        <div key={product.id} className={`${product.kind === 'off' && 'bg-green-500'} p-5 relative shadow-lg rounded-md`}>
                             <img src={product.img} alt="" className="w-full h-30 object-cover rounded-lg"/>
                             <h2 className="font-bold mt-4">{product.name}</h2>
                             <p className="mt-2">${product.price}</p>
