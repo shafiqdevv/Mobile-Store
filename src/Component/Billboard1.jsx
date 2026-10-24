@@ -24,13 +24,13 @@ function Billboard1(){
             initial={{opacity: 0, y: 50}}
             whileInView={{opacity: 1, y: 0}}
             transition={{duration: 0.7, ease: 'easeOut'}}
-        className="bg-[#f42c37] rounded-3xl mx-15 my-20 h-60 text-white relative flex justify-between">
-            <div className="m-10">
+        className="bg-[#f42c37] rounded-3xl mx-15 my-20 text-white relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+            <div className="m-10 bg-blue-500">
                 <p className="text-sm">30% OFF</p>
                 <h1 className="font-bold text-5xl">FINE <br /> SMILE</h1>
                 <p className="font-thin text-gray-100">10 jan to 28 jan</p>
             </div>
-            <div className="m-10">
+            <div className="m-10 bg-green-500">
                 <p className="font-bold text-lg">Air Solo Bass</p>
                 <h2 className="text-4xl font-bold">Winter Sale</h2>
                 <p className="w-70 text-sm font-thind">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus amet</p>

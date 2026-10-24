@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import GoBack from "../Component/GoBack";
 function addForm(){
     const navigate = useNavigate();
     const [product, setProduct] = useState({
@@ -37,7 +38,7 @@ function addForm(){
     }
     return(
         <div className="min-h-screen flex flex-col items-center justify-center gap-5">
-            <BiLeftArrowAlt onClick={() => navigate(-1)} size={30} strokeWidth={1.2} className="cursor-pointer border rounded-full active:scale-97"/>
+            <GoBack/>
             <form onSubmit={handleSubmit} className="flex flex-col gap-5 items-center p-5 rounded-lg shadow-[0_0_10px_0.1px] bg-white">
                 <h1 className="font-bold text-2xl">Add Form</h1>
                 <div className="flex flex-col gap-5 items-center">

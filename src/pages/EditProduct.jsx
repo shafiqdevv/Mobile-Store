@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import products from "../data/Products";
 import { BiLeftArrowAlt } from "react-icons/bi";
+import GoBack from "../Component/GoBack";
 
 function EditProduct() {
   const { id } = useParams();
@@ -22,7 +23,7 @@ function EditProduct() {
   };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <BiLeftArrowAlt onClick={() => navigate(-1)} size={30} strokeWidth={1.2} className="cursor-pointer border rounded-full active:scale-97"/>
+      <GoBack/>
       <h1 className="text-3xl font-bold"> Edit Product</h1>
       <div className="flex flex-col p-5 gap-2 max-w-md border rounded-xl shadow-lg">
         <img src={img} alt={name} className="w-full h-35 object-cover rounded-lg"/>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { BiLeftArrowAlt } from "react-icons/bi";
+import GoBack from "../Component/GoBack";
 function Cart({setCountBuy}){
     const navigate = useNavigate();
     const [cart, setCart] = useState(
@@ -20,7 +21,7 @@ function Cart({setCountBuy}){
             whileInView={{opacity: 1, y: 0}}
             transition={{duration: 0.7, ease: 'easeOut'}}
         className="min-h-screen flex flex-col items-center pt-10">
-            <BiLeftArrowAlt onClick={() => navigate(-1)} size={30} strokeWidth={1.2} className="cursor-pointer border rounded-full active:scale-97"/>
+            <GoBack/>
             <h1 className="text-3xl">{cart.length} Product in Shoping Cart</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                 {

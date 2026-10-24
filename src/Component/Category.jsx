@@ -53,7 +53,7 @@ function Category({setCategory}) {
   return (
     <div id="category" className="px-30 py-10">
       <div className="container">
-        <div className="grid grid-cols-1 ms:grid-cols-2 md:grid-cols-4 lg:grid-cils-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols3 lg:grid-cols-4 gap-4">
           {categorys.map((category) => (
             <motion.div
               initial={{opacity: 0, y: 50}}

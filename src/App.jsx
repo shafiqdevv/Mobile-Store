@@ -39,7 +39,7 @@ function App() {
     setNight((prev) => !prev);
   }
   const location = useLocation();
-  const hideNavBar = location.pathname === '/loginForm' || location.pathname === '/addForm' || location.pathname.startsWith('/edit-product/')
+  const hideNavBar = location.pathname === '/loginForm' || location.pathname === '/addForm' || location.pathname.startsWith('/edit-product/') || location.pathname === '*'
   return (
     <div className={night ? darkMode : lightMode}>
       {!hideNavBar && (<NavBar night={night} handleNight={handleNight} countBuy={countBuy} search={search} setSearch={setSearch}/>)}
