@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { useNavigate } from "react-router-dom";
-import { BiLeftArrowAlt } from "react-icons/bi";
 import GoBack from "../Component/GoBack";
 function Cart({setCountBuy}){
     const [cart, setCart] = useState(
