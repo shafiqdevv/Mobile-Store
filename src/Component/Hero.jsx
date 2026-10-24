@@ -62,53 +62,11 @@ function Hero({ night }) {
         sliders.map(slider => (
         <SwiperSlide>
           <section className={`min-w-full h-90 p-3 mt-10 px-10 snap-center`}>
-            <motion.p
-              initial={{
-                  opacity:0,
-                  scale: 0
-                }}
-                animate={{
-                  opacity: 1,
-                  scale:1
-                }}
-                transition={{
-                  duration: 1
-                }}
-            className="font-bold text-xl">Original</motion.p>
-            <motion.h2
-              initial={{
-                  opacity:0,
-                  scale: 0
-                }}
-                animate={{
-                  opacity: 1,
-                  scale:1
-                }}
-                transition={{
-                  duration: 1
-                }}
-            className="font-bold text-5xl">{slider.title1}</motion.h2>
-            <motion.h1 
-              initial={{
-                  // y:100,
-                  opacity:0,
-                  x:200
-                }}
-                animate={{
-                  // y:0,
-                  opacity: 1,
-                  x:0
-                }}
-                transition={{
-                  duration: 1.5
-                }}
-            className={`text-9xl font-bold ${night ? "text-gray-800" : "text-gray-100"} transition select-none`}>{slider.title2}</motion.h1>
+            <motion.p initial={{opacity:0,scale: 0}} animate={{opacity: 1,scale:1}} transition={{duration: 1}} className="font-bold text-xl">Original</motion.p>
+            <motion.h2 initial={{opacity:0,scale: 0}} animate={{opacity: 1,scale:1}} transition={{duration: 1}} className="font-bold text-5xl">{slider.title1}</motion.h2>
+            <motion.h1 initial={{opacity:0,x:200}}animate={{opacity: 1,x:0}}transition={{duration: 1.5}} className={`text-9xl font-bold ${night ? "text-gray-800" : "text-gray-100"} transition select-none`}>{slider.title2}</motion.h1>
             <div className="relative">
-              <motion.img
-                initial={{opacity:0, scale: 0}}
-                animate={{opacity: 1, scale:1}}
-                transition={{duration: 1}}
-              src={`./${slider.image}`} className={slider.iamgeCSS}/>
+              <motion.img initial={{opacity:0, scale: 0}} animate={{opacity: 1, scale:1}} transition={{duration: 1}} src={`./${slider.image}`} className={slider.iamgeCSS}/>
             </div>
             <a href="#category" className="bg-[#f70505] text-sm rounded-2xl px-7 py-1 text-white">Shop By Category</a>
           </section>
@@ -116,7 +74,7 @@ function Hero({ night }) {
         ))
       }
     </Swiper>
-      </div>
+  </div>
   );
 }
 export default Hero;
