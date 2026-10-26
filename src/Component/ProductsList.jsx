@@ -1,7 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { AiFillEdit } from "react-icons/ai";
-import { FaCartShopping } from "react-icons/fa6";
+import { FaCameraRetro, FaCartShopping } from "react-icons/fa6";
+import { GiWatch } from "react-icons/gi";
+import { BiHeadphone } from "react-icons/bi";
+import { IoGameController } from "react-icons/io5";
+import { BsSpeakerFill } from "react-icons/bs";
+import { IoIosAddCircle } from "react-icons/io";
 function ProductsList({night, filteredProducts, setCategory, category}) {
   const navigate = useNavigate();
   const handleEdit = (product) => {
@@ -27,12 +32,13 @@ function ProductsList({night, filteredProducts, setCategory, category}) {
       className="flex flex-wrap gap-3 justify-center mb-8">
         <button onClick={() => setCategory("all")} className={`${category === 'all' ? 'bg-blue-600' : ' bg-red-600'} px-4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>All</button>
         <button onClick={() => setCategory("earpoad")}   className={`${category === 'earpoad' ? 'bg-blue-600' : ' bg-red-600'}  px-4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Earpoad</button>
-        <button onClick={() => setCategory("watch")}     className={`${category === 'watch' ? 'bg-blue-600' : ' bg-red-600'}  px-4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Watch</button>
-        <button onClick={() => setCategory("headphone")} className={`${category === 'headphone' ? 'bg-blue-600' : ' bg-red-600'}  px-4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Headphone</button>
-        <button onClick={() => setCategory("console")}   className={`${category === 'console' ? 'bg-blue-600' : ' bg-red-600'}  px-4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Console</button>
-        <button onClick={() => setCategory("camera")}    className={`${category === 'camera' ? 'bg-blue-600' : ' bg-red-600'}  px-4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Camera</button>
-        <button onClick={() => setCategory("speaker")}   className={`${category === 'speaker' ? 'bg-blue-600' : ' bg-red-600'}  px-4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Speaker</button>
-        <NavLink  to={'/addForm'} className={`${night && 'text-white'} px-4 bg-blue-400 cursor-pointer active:scale-102 rounded-lg flex items-center text-black`}>Add Product</NavLink>
+        <GiWatch size={40} color="black" onClick={() => setCategory("watch")}     className={`${category === 'watch' ? 'bg-blue-600' : ' bg-gray-400'}  px4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Watch</GiWatch>
+        
+        <BiHeadphone size={40} color="black" onClick={() => setCategory("headphone")} className={`${category === 'headphone' ? 'bg-blue-600' : ' bg-gray-400'}  px4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Headphone</BiHeadphone>
+        <IoGameController size={40} color="black" onClick={() => setCategory("console")}   className={`${category === 'console' ? 'bg-blue-600' : ' bg-gray-400'}  px4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Console</IoGameController>
+        <FaCameraRetro size={40} color="black" onClick={() => setCategory("camera")}    className={`${category === 'camera' ? 'bg-blue-600' : ' bg-gray-400'}  px4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Camera</FaCameraRetro>
+        <BsSpeakerFill size={40} color="black" onClick={() => setCategory("speaker")}   className={`${category === 'speaker' ? 'bg-blue-600' : ' bg-gray-400'}  px4 py-1 cursor-pointer active:scale-102 text-sm rounded-full text-white`}>Speaker</BsSpeakerFill>
+        <NavLink  to={'/addForm'} className={`${night && 'text-white'} bg-blue-400 cursor-pointer active:scale-102 rounded-lg flex items-center text-black text-sm`}><IoIosAddCircle size/> Add Product</NavLink>
       </motion.div>
       {/* Products */}
       <motion.div
