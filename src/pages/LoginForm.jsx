@@ -110,10 +110,10 @@ function LoginForm() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative w-full max-w-md rounded-3xl border border-white/40 bg-white/10 px-7 py-8 text-white shadow-2xl backdrop-blur-xl sm:px-10"
-      >
+        className="relative w-80 max-w-md rounded-3xl border border-white/40 bg-white/10 p-2 text-white shadow-2xl backdrop-blur-xl sm:px-10"
+      >~~
         {/* Heading */}
-        <div className="mb-8 flex flex-col items-center gap-3">
+        <div className="mb-8 flex flex-col items-center gap-1">
           <GoBack />
 
           <h1 className="font-poppins text-4xl font-semibold">
@@ -128,7 +128,7 @@ function LoginForm() {
         {/* Form */}
         <form
           onSubmit={handleSubmit(onFormSubmit)}
-          className="flex flex-col gap-5"
+          className="flex flex-col gap-2"
         >
           <motion.input
             whileFocus={{ scale: 1.02 }}
@@ -136,7 +136,7 @@ function LoginForm() {
             type="text"
             placeholder="Name..."
             {...register("name")}
-            className="w-full rounded-full border border-white/50 bg-white/10 px-5 py-3 text-white outline-none placeholder:text-white/70 focus:border-white focus:bg-white/15"
+            className="w-full rounded-full border border-white/50 bg-white/10 px-5 py-1 text-white outline-none placeholder:text-white/70 focus:border-white focus:bg-white/15"
           />
 
           <motion.input
@@ -145,7 +145,7 @@ function LoginForm() {
             type="email"
             placeholder="Email..."
             {...register("email")}
-            className="w-full rounded-full border border-white/50 bg-white/10 px-5 py-3 text-white outline-none placeholder:text-white/70 focus:border-white focus:bg-white/15"
+            className="w-full rounded-full border border-white/50 bg-white/10 px-5 py-1 text-white outline-none placeholder:text-white/70 focus:border-white focus:bg-white/15"
           />
 
           <div className="w-full overflow-hidden rounded-full">
@@ -155,7 +155,7 @@ function LoginForm() {
               onChange={(value) => setPhone(value)}
               inputStyle={{
                 width: "100%",
-                height: "44px",
+                height: "35px",
                 borderRadius: "9999px",
                 border: "1px solid rgba(255,255,255,0.5)",
                 background: "rgba(255,255,255,0.1)",
@@ -182,7 +182,7 @@ function LoginForm() {
             type="password"
             placeholder="Password..."
             {...register("password")}
-            className="w-full rounded-full border border-white/50 bg-white/10 px-5 py-3 text-white outline-none placeholder:text-white/70 focus:border-white focus:bg-white/15"
+            className="w-full rounded-full border border-white/50 bg-white/10 px-5 py-1 text-white outline-none placeholder:text-white/70 focus:border-white focus:bg-white/15"
           />
 
           <motion.input
@@ -191,14 +191,14 @@ function LoginForm() {
             type="password"
             placeholder="Confirm Password..."
             {...register("confirmPassword")}
-            className="w-full rounded-full border border-white/50 bg-white/10 px-5 py-3 text-white outline-none placeholder:text-white/70 focus:border-white focus:bg-white/15"
+            className="w-full rounded-full border border-white/50 bg-white/10 px-5 py-1 text-white outline-none placeholder:text-white/70 focus:border-white focus:bg-white/15"
           />
 
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
             type="submit"
-            className="mt-2 w-full rounded-full bg-gradient-to-r from-lime-400 to-emerald-500 py-3 font-semibold text-white shadow-lg transition-shadow hover:shadow-emerald-500/30"
+            className="mt-2 w-full rounded-full bg-gradient-to-r from-lime-400 to-emerald-500 py-1 font-semibold text-white shadow-lg transition-shadow hover:shadow-emerald-500/30"
           >
             Sign in
           </motion.button>
