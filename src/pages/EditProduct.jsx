@@ -28,9 +28,9 @@ function EditProduct() {
       <h1 className="text-3xl font-bold"> Edit Product</h1>
       <div className="rounded-xl p-3 shadow-lg flex flex-col gap-5">
         <img src={img} alt={name} className="w-full h-35 object-cover rounded-lg"/>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="border-2 border-gray-700 px-3 rounded-lg" placeholder="Product name"/>
-        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} className="border-2 border-gray-700 px-3 rounded-lg" placeholder="Product price"/>
-        <input type="text" value={img} onChange={(e) => setImg(e.target.value)} className="border-2 border-gray-700 px-3 rounded-lg" placeholder="Image URL"/>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="border-2 border-gray-300 shadow-[inset_0_4px_12px_rgba(0,0,0,0.3)] focus:outline-none focus:border-gray-500 py-1 px-3 rounded-md" placeholder="Product name"/>
+        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} className="border-2 border-gray-300 shadow-[inset_0_4px_12px_rgba(0,0,0,0.3)] focus:outline-none focus:border-gray-500 py-1 px-3 rounded-md" placeholder="Product price"/>
+        <input type="text" value={img} onChange={(e) => setImg(e.target.value)} className="border-2 border-gray-300 shadow-[inset_0_4px_12px_rgba(0,0,0,0.3)] focus:outline-none focus:border-gray-500 py-1 px-3 rounded-md" placeholder="Image URL"/>
         <div className="flex gap-3 justify-end">
           <IoIosCheckmark onClick={handleSave} size={30} className="border-2 p1 rounded-full"/>
           <MdDelete size={30} className="border-2 p-1 rounded-full"/>
