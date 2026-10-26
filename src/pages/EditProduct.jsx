@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import products from "../data/Products";
-import { BiLeftArrowAlt } from "react-icons/bi";
 import GoBack from "../Component/GoBack";
+import { IoIosCheckmark } from "react-icons/io";
+import { MdDelete } from "react-icons/md";
 
 function EditProduct() {
   const { id } = useParams();
@@ -25,13 +26,15 @@ function EditProduct() {
     <div className="min-h-screen flex flex-col items-center justify-center">
       <GoBack/>
       <h1 className="text-3xl font-bold"> Edit Product</h1>
-      <div className="flex flex-col p-5 gap-2 max-w-md border rounded-xl shadow-lg">
+      <div className="rounded-xl p-3 shadow-lg flex flex-col gap-5">
         <img src={img} alt={name} className="w-full h-35 object-cover rounded-lg"/>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="border px-3 rounded-lg" placeholder="Product name"/>
-        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} className="border px-3 rounded-lg" placeholder="Product price"/>
-        <input type="text" value={img} onChange={(e) => setImg(e.target.value)} className="border px-3 rounded-lg" placeholder="Image URL"/>
-        <button onClick={handleSave} className="bg-green-500 text-white py-3 rounded-lg hover:active-103">Save</button>
-        <button onClick={handleSave} className="bg-red-500 text-white py-3 rounded-lg hover:active-103">Delete</button>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="border-2 border-gray-700 px-3 rounded-lg" placeholder="Product name"/>
+        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} className="border-2 border-gray-700 px-3 rounded-lg" placeholder="Product price"/>
+        <input type="text" value={img} onChange={(e) => setImg(e.target.value)} className="border-2 border-gray-700 px-3 rounded-lg" placeholder="Image URL"/>
+        <div className="flex gap-3 justify-end">
+          <IoIosCheckmark onClick={handleSave} size={30} className="border-2 p1 rounded-full"/>
+          <MdDelete size={30} className="border-2 p-1 rounded-full"/>
+        </div>
       </div>
     </div>
   );
