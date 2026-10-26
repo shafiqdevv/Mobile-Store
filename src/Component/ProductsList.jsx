@@ -1,5 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
+import { AiFillEdit } from "react-icons/ai";
+import { FaCartShopping } from "react-icons/fa6";
 function ProductsList({night, filteredProducts, setCategory, category}) {
   const navigate = useNavigate();
   const handleEdit = (product) => {
@@ -40,17 +42,17 @@ function ProductsList({night, filteredProducts, setCategory, category}) {
           <motion.div
               initial={{opacity: 0, y: 50}}
               whileInView={{opacity: 1, y: 0}}
-              whileHover={{y: -10, scale: 1}}
+              whileHover={{y: -5, scale: 1}}
               transition={{opacity:{duration: 0.7}, y:{duration: 0.188}, ease: 'easeOut'}}
-          key={product.id} className="rounded-xl p-3 shadow-lg bg[#f42c37]">
+          key={product.id} className="rounded-xl p-3 shadow-lg flex flex-col gap-5">
             <img src={product.img} alt={product.name} className="w-full h-30 object-cover rounded-lg"/>
             <div className="flex items-center gap-1 mt-2">
               <h2 className="font-bold text-sm">{product.name}</h2>
               <p className="text-sm font-bold">${product.price}</p>
             </div>
-            <div className="flex gap-3 mt-2">
-              <button onClick={() => handleBuy(product)} className="px-3 py-[1px] mt-5 active:scale-103  bg-orange-500 text-white rounded-lg">Buy</button>
-              <button onClick={() => handleEdit(product)} className="px-3 py-[1px] mt-5 active:scale-103 bg-yellow-500 text-sm text-white rounded-lg">Edit</button>
+            <div className="flex gap-3 bg-red500  mt-2">
+              <AiFillEdit onClick={() => handleEdit(product)}    size={20} className="cursor-pointer hover:scale-110 transition duration-200"/>
+              <FaCartShopping onClick={() => handleBuy(product)} size={20} className="cursor-pointer hover:scale-110 transition duration-200"/>
             </div>
           </motion.div>
         ))}
