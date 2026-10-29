@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import GoBack from "../Component/GoBack";
-import { MdDelete } from "react-icons/md";
 import { AiFillEdit } from "react-icons/ai";
 import { IoIosRemoveCircle } from "react-icons/io";
+import { BsStarFill } from "react-icons/bs";
 function Cart({setCountBuy, handleEdit, night}){
     const [cart, setCart] = useState(
         JSON.parse(localStorage.getItem('cart')) || []
@@ -31,11 +31,12 @@ function Cart({setCountBuy, handleEdit, night}){
                         key={product.id} className={`p-5 flex flex-col gap-2 relative rounded-xl ${night ?"shadow-lg shadow-black" : 'shadow-lg'}`}>
                             <img src={product.img} alt="" className="w-full h-30 object-cover rounded-lg"/>
                             <h2 className="font-bold mt-4">{product.name}</h2>
-                            <div>
+                            <div className="flex flex-col items-center gap-1 mt-2">
                                 <strong className="mt-2 text-green-600 text-lg">${product.price} </strong>
-                                <del className="text-sm text-red-600">$500</del>
+                                <del className="text-sm text-red-600">$450</del>
+                                <p className="flex gap-1 items-center justify-center bg-green-900 rounded-3xl text-white text-xs px-2">4.4<BsStarFill size={10}/> </p>
                             </div>
-                            <p className="absolute right-[-20px] top-5 bg-red-500 text-white px-3 rounded-lg rotate-45">{product.off}</p>
+                            <p className="absolute right-[-20px] top-5 bg-green-700 font-michroma text-white px-3 rounded-lg rotate-45">{product.off}</p>
                             <AiFillEdit onClick={() => handleEdit(product)}    size={20} className="cursor-pointer hover:scale-110 transition duration-200 hover:text-blue-600"/>
                             <IoIosRemoveCircle onClick={() => removeProduct(product.id)} size={20} className="cursor-pointer hover:scale-110 transition duration-200 hover:text-red-600"/>
                         </motion.div>
