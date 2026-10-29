@@ -61,7 +61,7 @@ function App() {
         <Route path="/edit-product/:id" element={<EditProduct />}/>
         <Route path="/cart" element={
           <ProtectedRoute>
-            <Cart setCountBuy={setCountBuy} handleEdit={handleEdit}/>
+            <Cart setCountBuy={setCountBuy} handleEdit={handleEdit} night={night}/>
           </ProtectedRoute>
         }/>
         <Route path="/loginForm" element={<LoginForm  />}/>

@@ -1,11 +1,23 @@
 
 @import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@400..900&family=Shadows+Into+Light+Two&display=swap');
 
 @import "tailwindcss";
 
 @theme {
   --font-poppins: "Poppins", sans-serif;
+}
+.font-michroma {
+  font-family: "Michroma", sans-serif;
+}
+
+.font-orbitron {
+  font-family: "Orbitron", sans-serif;
+}
+
+.font-shadows {
+  font-family: "Shadows Into Light Two", cursive;
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
