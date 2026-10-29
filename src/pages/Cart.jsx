@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import GoBack from "../Component/GoBack";
-function Cart({setCountBuy}){
+import { MdDelete } from "react-icons/md";
+import { AiFillEdit } from "react-icons/ai";
+function Cart({setCountBuy, handleEdit}){
     const [cart, setCart] = useState(
         JSON.parse(localStorage.getItem('cart')) || []
     );
@@ -12,28 +14,34 @@ function Cart({setCountBuy}){
         localStorage.setItem('cart', JSON.stringify(updateCart))
     }
     return(
-        <motion.div
-            initial={{opacity: 0, y: 50}}
-            animate={{opacity: 1, y: 0}}
-            whileInView={{opacity: 1, y: 0}}
-            transition={{duration: 0.7, ease: 'easeOut'}}
+        <div
+           
         className="min-h-screen flex flex-col items-center pt-10">
             <GoBack/>
             <h1 className="text-3xl">{cart.length} Product in Shoping Cart</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                 {
                     cart.map(product => (
-                        <div key={product.id} className={`${product.kind === 'off' && 'bg-green-500'} p-5 relative shadow-lg rounded-md`}>
+                        <motion.div
+                             initial={{opacity: 0, y: 50}}
+                             whileInView={{opacity: 1, y: 0}}
+                             whileHover={{y: -5, scale: 1}}
+                             transition={{opacity:{duration: 0.7}, y:{duration: 0.188}, ease: 'easeOut'}}
+                        key={product.id} className={`p-5 flex flex-col gap-2 relative shadow-lg rounded-md`}>
                             <img src={product.img} alt="" className="w-full h-30 object-cover rounded-lg"/>
                             <h2 className="font-bold mt-4">{product.name}</h2>
-                            <p className="mt-2">${product.price}</p>
+                            <div>
+                                <strong className="mt-2 text-green-600 text-lg">${product.price} </strong>
+                                <del className="text-sm text-red-600">$500</del>
+                            </div>
                             <p className="absolute right-[-20px] top-5 bg-red-500 text-white px-3 rounded-lg rotate-45">{product.off}</p>
-                            <button onClick={() => removeProduct(product.id)} className="mt-5 px-5 py-1 bg-red-500 text-white rounded-lg">Remove</button>
-                        </div>
+                            <AiFillEdit onClick={() => handleEdit(product)}    size={20} className="cursor-pointer hover:scale-110 transition duration-200"/>
+                            <MdDelete onClick={() => removeProduct(product.id)} size={20} />
+                        </motion.div>
                     ))
                 }
             </div>
-        </motion.div>
+        </div>
     )
 }
 export default Cart;

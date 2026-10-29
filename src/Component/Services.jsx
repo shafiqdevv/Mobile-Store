@@ -7,7 +7,7 @@ function Services() {
           initial={{opacity: 0, y: 50}}
           whileInView={{opacity: 1, y: 0}}
           transition={{duration: 0.7, ease: 'easeOut'}}
-    className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 px-15 mx-20">
+    className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 mx-20 md:px-15">
       <div className="flex justify-between gap-2 items-center">
         <FaCarSide size={37} strokeWidth={20} color="red"/>
         <div className="flex flex-col">

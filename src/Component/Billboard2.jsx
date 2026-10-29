@@ -24,7 +24,7 @@ function Billboard2(){
             initial={{opacity: 0, y: 50}}
             whileInView={{opacity: 1, y: 0}}
             transition={{duration: 0.7, ease: 'easeOut'}}
-        className="bg-[#2dcc6f] rounded-3xl mx-15 my-20 text-white relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+        className="bg-red-700 rounded-3xl mx-15 my-20 text-white relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
             <div className="m-10">
                 <p className="text-sm">30% OFF</p>
                 <h1 className="font-bold text-5xl">FINE <br /> SMILE</h1>

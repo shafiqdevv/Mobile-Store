@@ -16,7 +16,7 @@ function Footer({night}) {
         <img src="logo (4).svg" alt="logo" className="w-15"/>
         <img src="logo (6).svg" alt="logo" className="w-15"/>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 px-15 mb-5 mt-5">
+      <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 px-15 mb- mt-5">
         <div className="max-w-70">
           <h1 className="text-red-600 font-bold text-2xl">ESHOP</h1>
           <p className="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus in vero cupiditate nulla! Vero delectus molestias laborum odio off</p>

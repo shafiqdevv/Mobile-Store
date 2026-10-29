@@ -5,7 +5,7 @@ import Services from "./Component/Services";
 import Billboard1 from "./Component/Billboard1";
 import Billboard2 from "./Component/Billboard2";
 import Footer from "./Component/Footer";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Hero from "./Component/Hero";
 import FixedButton from "./Component/FixedButton";
 import LoginForm from "./pages/LoginForm";
@@ -38,6 +38,10 @@ function App() {
   function handleNight() {
     setNight((prev) => !prev);
   }
+  const navigate = useNavigate();
+  const handleEdit = (product) => {
+    navigate(`/edit-product/${product.id}`);
+  };
   const location = useLocation();
   const hideNavBar = location.pathname === '/loginForm' || location.pathname === '/addForm' || location.pathname.startsWith('/edit-product/') || location.pathname === '*'
   return (
@@ -49,7 +53,7 @@ function App() {
           element={
             <>
               <Hero night={night} />
-              <Category setCategory={setCategory}/> <Services /> <Billboard1 /> <ProductsList category={category} night={night} filteredProducts={filteredProducts} setCategory={setCategory}/>
+              <Category setCategory={setCategory}/> <Services /> <Billboard1 /> <ProductsList handleEdit={handleEdit} category={category} night={night} filteredProducts={filteredProducts} setCategory={setCategory}/>
               <Billboard2 /> <Footer night={night} /> <FixedButton/>
             </>
           }
@@ -57,7 +61,7 @@ function App() {
         <Route path="/edit-product/:id" element={<EditProduct />}/>
         <Route path="/cart" element={
           <ProtectedRoute>
-            <Cart setCountBuy={setCountBuy}/>
+            <Cart setCountBuy={setCountBuy} handleEdit={handleEdit}/>
           </ProtectedRoute>
         }/>
         <Route path="/loginForm" element={<LoginForm  />}/>
