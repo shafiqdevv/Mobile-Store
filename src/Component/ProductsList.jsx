@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { AiFillEdit } from "react-icons/ai";
 import { FaCartShopping } from "react-icons/fa6";
 import CategoryBTN from "./CategoryBTN";
+import { BsStarFill } from "react-icons/bs";
 function ProductsList({night, filteredProducts, setCategory, handleEdit}) {
   const navigate = useNavigate();
   function handleBuy(product){
@@ -34,6 +35,7 @@ function ProductsList({night, filteredProducts, setCategory, handleEdit}) {
               <h2 className="font-bold text-sm">{product.name}</h2>
               <strong className="text-sm font-extrabold text-green-500">${product.price}</strong>
               <del className="text-xs text-red-500">{product.oldPrice}</del>
+              <p className="flex gap-1 items-center justify-center bg-green-900 rounded-3xl text-white text-xs px-2">{product.rate}<BsStarFill size={10}/> </p>
             </div>
             <div className="flex gap-3 bg-red500  mt-2">
               <AiFillEdit onClick={() => handleEdit(product)}    size={20} className="hover:text-blue-600 cursor-pointer hover:scale-110 transition duration-200"/>
