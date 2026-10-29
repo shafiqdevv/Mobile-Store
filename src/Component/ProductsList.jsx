@@ -33,7 +33,7 @@ function ProductsList({night, filteredProducts, setCategory, handleEdit}) {
             <div className="flex flex-col items-center gap-1 mt-2">
               <h2 className="font-bold text-sm">{product.name}</h2>
               <strong className="text-sm font-extrabold text-green-500">${product.price}</strong>
-              <del className="text-xs text-red-500">$400</del>
+              <del className="text-xs text-red-500">{product.oldPrice}</del>
             </div>
             <div className="flex gap-3 bg-red500  mt-2">
               <AiFillEdit onClick={() => handleEdit(product)}    size={20} className="hover:text-blue-600 cursor-pointer hover:scale-110 transition duration-200"/>
