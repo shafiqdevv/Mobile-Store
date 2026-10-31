@@ -33,7 +33,7 @@ function Cart({setCountBuy, handleEdit, night}){
                             <h2 className="font-bold mt-4">{product.name}</h2>
                             <div className="flex flex-col items-center gap-1 mt-2">
                                 <strong className="mt-2 text-green-600 text-lg">${product.price} </strong>
-                                <del className="text-sm text-red-600">$450</del>
+                                <del className="text-sm text-red-600">${product.oldPrice}</del>
                                 <p className="flex gap-1 items-center justify-center bg-green-900 rounded-3xl text-white text-xs px-2">4.4<BsStarFill size={10}/> </p>
                             </div>
                             <p className="absolute right-[-20px] top-5 bg-green-700 font-michroma text-white px-3 rounded-lg rotate-45">{product.off}</p>

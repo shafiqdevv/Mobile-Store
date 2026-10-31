@@ -81,7 +81,7 @@ function Billboard2() {
       <img
         src="/billboard (2).png"
         alt="Phoenix headphones"
-        className="pointer-events-none absolute right-2 top-[-15px] z-0 w-32 object-contain sm:right-8 sm:w-36 md:right-[42%] md:top-[-20px] md:w-44 lg:right-[40%] lg:w-52"
+        className="pointer-events-none absolute right-2 top-[-15px] z-0 w-32 object-contain sm:right-8 sm:w-36 md:right-[45%] md:top-[-20px] md:w-44 lg:right-[48%] lg:w-52"
       />
     </motion.div>
   );
