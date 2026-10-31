@@ -26,9 +26,9 @@ function Footer({ night }) {
       >
         <img src="/logo (1).svg" alt="Brand 1" className="w-15" />
         <img src="/logo (2).svg" alt="Brand 2" className="w-15" />
-        <img src="/logo (3).svg" alt="Brand 3" className="w-15" />
-        <img src="/logo (4).svg" alt="Brand 4" className="w-15" />
-        <img src="/logo (6).svg" alt="Brand 5" className="w-15" />
+        <img src="/logo (1).svg" alt="Brand 3" className="w-15" />
+        <img src="/logo (2).svg" alt="Brand 4" className="w-15" />
+        <img src="/logo (2).svg" alt="Brand 5" className="w-15" />
       </div>
 
       {/* Footer content */}
